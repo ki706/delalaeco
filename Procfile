@@ -1,0 +1,1 @@
+web: gunicorn dlela.wsgi --log-file -

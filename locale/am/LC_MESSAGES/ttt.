@@ -1,0 +1,814 @@
+ # SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-04 20:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: accounts/models.py:10
+msgid "PhoneNumber"
+msgstr "ስልክ ቁጥር"
+
+#: accounts/models.py:12
+msgid "User"
+msgstr ""
+
+#: accounts/models.py:13
+msgid "Users"
+msgstr ""
+
+#: accounts/templates/account/account_inactive.html:5
+#: accounts/templates/account/account_inactive.html:8
+#: templates/account/account_inactive.html:5
+#: templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: accounts/templates/account/account_inactive.html:10
+#: templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: accounts/templates/account/email.html:5
+#: accounts/templates/account/email.html:8
+msgid "E-mail Addresses"
+msgstr ""
+
+#: accounts/templates/account/email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: accounts/templates/account/email.html:24
+msgid "Verified"
+msgstr ""
+
+#: accounts/templates/account/email.html:26
+msgid "Unverified"
+msgstr ""
+
+#: accounts/templates/account/email.html:28
+msgid "Primary"
+msgstr ""
+
+#: accounts/templates/account/email.html:34
+msgid "Make Primary"
+msgstr ""
+
+#: accounts/templates/account/email.html:35
+msgid "Re-send Verification"
+msgstr ""
+
+#: accounts/templates/account/email.html:36
+msgid "Remove"
+msgstr ""
+
+#: accounts/templates/account/email.html:43
+msgid "Warning:"
+msgstr ""
+
+#: accounts/templates/account/email.html:43
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: accounts/templates/account/email.html:48
+msgid "Add E-mail Address"
+msgstr ""
+
+#: accounts/templates/account/email.html:53
+msgid "Add E-mail"
+msgstr ""
+
+#: accounts/templates/account/email.html:63
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: accounts/templates/account/email/base_message.txt:1
+#: templates/account/email/base_message.txt:1
+#, python-format
+msgid "Hello from %(site_name)s!"
+msgstr ""
+
+#: accounts/templates/account/email/base_message.txt:5
+#: templates/account/email/base_message.txt:5
+#, python-format
+msgid ""
+"Thank you for using %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: accounts/templates/account/email/email_confirmation_message.txt:5
+#: templates/account/email/email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because user %(user_display)s has given your e-"
+"mail address to register an account on %(site_domain)s.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s"
+msgstr ""
+
+#: accounts/templates/account/email/email_confirmation_subject.txt:3
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Please Confirm Your E-mail Address"
+msgstr ""
+
+#: accounts/templates/account/email/password_reset_key_message.txt:4
+#: templates/account/email/password_reset_key_message.txt:4
+msgid ""
+"You're receiving this e-mail because you or someone else has requested a "
+"password for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
+msgstr ""
+
+#: accounts/templates/account/email/password_reset_key_message.txt:9
+#: templates/account/email/password_reset_key_message.txt:9
+#, python-format
+msgid "In case you forgot, your username is %(username)s."
+msgstr ""
+
+#: accounts/templates/account/email/password_reset_key_subject.txt:3
+#: accounts/templates/account/email/unknown_account_subject.txt:3
+#: templates/account/email/password_reset_key_subject.txt:3
+#: templates/account/email/unknown_account_subject.txt:3
+msgid "Password Reset E-mail"
+msgstr ""
+
+#: accounts/templates/account/email/unknown_account_message.txt:4
+#: templates/account/email/unknown_account_message.txt:4
+#, python-format
+msgid ""
+"You are receiving this e-mail because you or someone else has requested a\n"
+"password for your user account. However, we do not have any record of a "
+"user\n"
+"with email %(email)s in our database.\n"
+"\n"
+"This mail can be safely ignored if you did not request a password reset.\n"
+"\n"
+"If it was you, you can sign up for an account using the link below."
+msgstr ""
+
+#: accounts/templates/account/email_confirm.html:6
+#: accounts/templates/account/email_confirm.html:10
+#: templates/account/email_confirm.html:6
+#: templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: accounts/templates/account/email_confirm.html:16
+#: templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: accounts/templates/account/email_confirm.html:20
+#: templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: accounts/templates/account/email_confirm.html:27
+#: templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: accounts/templates/account/login.html:6
+#: accounts/templates/account/login.html:10
+#: accounts/templates/account/login.html:43
+msgid "Sign In"
+msgstr ""
+
+#: accounts/templates/account/login.html:15
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: accounts/templates/account/login.html:25
+msgid "or"
+msgstr ""
+
+#: accounts/templates/account/login.html:32
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: accounts/templates/account/login.html:42
+#: accounts/templates/account/password_change.html:14
+#: templates/account/password_change.html:14
+msgid "Forgot Password?"
+msgstr ""
+
+#: accounts/templates/account/logout.html:5
+#: accounts/templates/account/logout.html:8
+#: accounts/templates/account/logout.html:17 templates/account/logout.html:5
+#: templates/account/logout.html:8 templates/account/logout.html:17
+msgid "Sign Out"
+msgstr ""
+
+#: accounts/templates/account/logout.html:10 templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: accounts/templates/account/messages/cannot_delete_primary_email.txt:2
+#: templates/account/messages/cannot_delete_primary_email.txt:2
+#, python-format
+msgid "You cannot remove your primary e-mail address (%(email)s)."
+msgstr ""
+
+#: accounts/templates/account/messages/email_confirmation_sent.txt:2
+#: templates/account/messages/email_confirmation_sent.txt:2
+#, python-format
+msgid "Confirmation e-mail sent to %(email)s."
+msgstr ""
+
+#: accounts/templates/account/messages/email_confirmed.txt:2
+#: templates/account/messages/email_confirmed.txt:2
+#, python-format
+msgid "You have confirmed %(email)s."
+msgstr ""
+
+#: accounts/templates/account/messages/email_deleted.txt:2
+#: templates/account/messages/email_deleted.txt:2
+#, python-format
+msgid "Removed e-mail address %(email)s."
+msgstr ""
+
+#: accounts/templates/account/messages/logged_in.txt:4
+#: templates/account/messages/logged_in.txt:4
+#, python-format
+msgid "Successfully signed in as %(name)s."
+msgstr ""
+
+#: accounts/templates/account/messages/logged_out.txt:2
+#: templates/account/messages/logged_out.txt:2
+msgid "You have signed out."
+msgstr ""
+
+#: accounts/templates/account/messages/password_changed.txt:2
+#: templates/account/messages/password_changed.txt:2
+msgid "Password successfully changed."
+msgstr ""
+
+#: accounts/templates/account/messages/password_set.txt:2
+#: templates/account/messages/password_set.txt:2
+msgid "Password successfully set."
+msgstr ""
+
+#: accounts/templates/account/messages/primary_email_set.txt:2
+#: templates/account/messages/primary_email_set.txt:2
+msgid "Primary e-mail address set."
+msgstr ""
+
+#: accounts/templates/account/messages/unverified_primary_email.txt:2
+#: templates/account/messages/unverified_primary_email.txt:2
+msgid "Your primary e-mail address must be verified."
+msgstr ""
+
+#: accounts/templates/account/password_change.html:5
+#: accounts/templates/account/password_change.html:8
+#: accounts/templates/account/password_change.html:13
+#: accounts/templates/account/password_reset_from_key.html:4
+#: accounts/templates/account/password_reset_from_key.html:7
+#: accounts/templates/account/password_reset_from_key_done.html:4
+#: accounts/templates/account/password_reset_from_key_done.html:7
+#: templates/account/password_change.html:5
+#: templates/account/password_change.html:8
+#: templates/account/password_change.html:13
+#: templates/account/password_reset_from_key.html:4
+#: templates/account/password_reset_from_key.html:7
+#: templates/account/password_reset_from_key_done.html:4
+#: templates/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr ""
+
+#: accounts/templates/account/password_reset.html:6
+#: accounts/templates/account/password_reset.html:10
+#: accounts/templates/account/password_reset_done.html:6
+#: accounts/templates/account/password_reset_done.html:9
+#: templates/account/password_reset.html:6
+#: templates/account/password_reset.html:10
+#: templates/account/password_reset_done.html:6
+#: templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: accounts/templates/account/password_reset.html:15
+#: templates/account/password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: accounts/templates/account/password_reset.html:20
+#: templates/account/password_reset.html:20
+msgid "Reset My Password"
+msgstr ""
+
+#: accounts/templates/account/password_reset.html:23
+#: templates/account/password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: accounts/templates/account/password_reset_done.html:15
+#: templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+
+#: accounts/templates/account/password_reset_from_key.html:7
+#: templates/account/password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr ""
+
+#: accounts/templates/account/password_reset_from_key.html:11
+#: templates/account/password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: accounts/templates/account/password_reset_from_key.html:16
+#: templates/account/password_reset_from_key.html:16
+msgid "change password"
+msgstr ""
+
+#: accounts/templates/account/password_reset_from_key_done.html:8
+#: templates/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: accounts/templates/account/password_set.html:5
+#: accounts/templates/account/password_set.html:8
+#: accounts/templates/account/password_set.html:13
+#: templates/account/password_set.html:5 templates/account/password_set.html:8
+#: templates/account/password_set.html:13
+msgid "Set Password"
+msgstr ""
+
+#: accounts/templates/account/signup.html:5 templates/account/login.html:8
+#: templates/account/signup.html:12
+msgid "Signup"
+msgstr ""
+
+#: accounts/templates/account/signup.html:8
+#: accounts/templates/account/signup.html:18 templates/account/login.html:19
+#: templates/account/signup.html:23
+msgid "Sign Up"
+msgstr "ይመዝገቡ"
+
+#: accounts/templates/account/signup.html:10
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: accounts/templates/account/signup_closed.html:5
+#: accounts/templates/account/signup_closed.html:8
+#: templates/account/signup_closed.html:5
+#: templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: accounts/templates/account/signup_closed.html:10
+#: templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: accounts/templates/account/snippets/already_logged_in.html:5
+#: templates/account/snippets/already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: accounts/templates/account/snippets/already_logged_in.html:5
+#: templates/account/snippets/already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: accounts/templates/account/verification_sent.html:5
+#: accounts/templates/account/verification_sent.html:8
+#: accounts/templates/account/verified_email_required.html:5
+#: accounts/templates/account/verified_email_required.html:8
+#: templates/account/verification_sent.html:5
+#: templates/account/verification_sent.html:8
+#: templates/account/verified_email_required.html:5
+#: templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: accounts/templates/account/verification_sent.html:10
+#: templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification e-mail within a few minutes."
+msgstr ""
+
+#: accounts/templates/account/verified_email_required.html:12
+#: templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: accounts/templates/account/verified_email_required.html:16
+#: templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: accounts/templates/account/verified_email_required.html:20
+#: templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: ads/models.py:33 ads/models.py:65
+msgid "user"
+msgstr "የለቀቀዉ"
+
+#: ads/models.py:34 ads/models.py:66 category/models.py:7 category/models.py:18
+msgid "catagory"
+msgstr "አይነት"
+
+#: ads/models.py:35 ads/models.py:67
+msgid "title"
+msgstr "ርእስ"
+
+#: ads/models.py:36
+msgid "price"
+msgstr "ዋጋ"
+
+#: ads/models.py:37 ads/models.py:71
+msgid "location"
+msgstr "ከተማ"
+
+#: ads/models.py:38 ads/models.py:72
+msgid "description"
+msgstr "ተጨማሪ ማብራርያ"
+
+#: ads/models.py:39 ads/models.py:73
+msgid "is_avilable"
+msgstr "ገበያ ላይ አለ"
+
+#: ads/models.py:40 ads/models.py:74
+msgid "is_verified"
+msgstr "ተረጋግጣል"
+
+#: ads/models.py:41
+msgid "product_picture"
+msgstr "የዕቃ ፎቶ"
+
+#: ads/models.py:42
+msgid "product_picture1"
+msgstr "የዐቃ ፎቶ1"
+
+#: ads/models.py:44 ads/models.py:79
+msgid "created"
+msgstr "የተለቀቀነት ቀን"
+
+#: ads/models.py:45 ads/models.py:80
+msgid "updated"
+msgstr "የተሳሳለበት ቀን"
+
+#: ads/models.py:49 templates/includes/navbar.html:35
+msgid "Product"
+msgstr "የዕቃ ዝርዝር"
+
+#: ads/models.py:50
+msgid "Products"
+msgstr "የዕቃ ዝርዝሮች"
+
+#: ads/models.py:68
+msgid "skill"
+msgstr "ችሎታ"
+
+#: ads/models.py:69
+msgid "experiance"
+msgstr "የስራ ልምድ"
+
+#: ads/models.py:75 ads/models.py:76
+msgid "service_picture"
+msgstr "ፎቶ"
+
+#: ads/models.py:84 templates/includes/navbar.html:36
+msgid "Human Resource"
+msgstr "የሰዉ ሐይል ስራ ዝርዝር"
+
+#: ads/models.py:85
+msgid "Human Resources"
+msgstr "የሰዉ ሐይል ስራ ዝርዝሮች"
+
+#: category/models.py:11
+msgid "Product Category"
+msgstr "የዕቃ አይነት"
+
+#: category/models.py:12
+msgid "Products Category"
+msgstr "የዕቃ አይነቶች"
+
+#: category/models.py:21
+msgid "Human Resource Category"
+msgstr "የሰዉ ሐይል ስራ አይነት"
+
+#: category/models.py:22
+msgid "Human Resources Categories"
+msgstr "የሰዉ ሐይል ስራ አይነቶች"
+
+#: contacts/models.py:8 contacts/models.py:30
+msgid "firs tname"
+msgstr "የመጀመርያ ስም"
+
+#: contacts/models.py:9 contacts/models.py:31
+msgid "last name"
+msgstr "የ አባት ስም"
+
+#: contacts/models.py:10
+msgid "product id"
+msgstr "መለያ ቁጥር"
+
+#: contacts/models.py:11 contacts/models.py:33
+msgid "customer need"
+msgstr "የደንበኛዉ ፍላጎት"
+
+#: contacts/models.py:12 contacts/models.py:34
+msgid "car title"
+msgstr "ርዕስ"
+
+#: contacts/models.py:13 contacts/models.py:35
+msgid "city"
+msgstr "ከተማ"
+
+#: contacts/models.py:14 contacts/models.py:36
+msgid "email"
+msgstr "ኢ-ሜይል"
+
+#: contacts/models.py:15 contacts/models.py:37
+msgid "phone number"
+msgstr "ስልክ ቁጥር"
+
+#: contacts/models.py:16 contacts/models.py:38
+msgid "message"
+msgstr "መልዕክት"
+
+#: contacts/models.py:17 contacts/models.py:39
+msgid "user id"
+msgstr "የዕቃዉ መለያ ቁጥር"
+
+#: contacts/models.py:18 contacts/models.py:40
+msgid "created date"
+msgstr "የተለቀቀበት ቀን"
+
+#: contacts/models.py:22
+msgid "Product Contact"
+msgstr "ዕቃ ፈላጊ"
+
+#: contacts/models.py:23
+msgid "Product Contacts"
+msgstr "ዕቃ ፈላጊዎች"
+
+#: contacts/models.py:32
+msgid "human resource id"
+msgstr "የሰዎች መለያ ቁጥር"
+
+#: contacts/models.py:44
+msgid "Human Resource Contact"
+msgstr "የሰዉ ሐይል ፈላጊዎች"
+
+#: contacts/models.py:45
+msgid "Human Resource Contacts"
+msgstr ""
+
+#: templates/account/login.html:63 templates/account/signup.html:75
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\"><span>Sign "
+"in</span></a>."
+msgstr "አካዉንት አለዎት? እንግዳዉስ<a href=\"%(login_url)s\"><span> "ግባ
+" </span></a>."
+
+
+#: templates/ads/ads_detail.html:137
+msgid "Send message"
+msgstr "መልዕክት ይላኩ"
+
+#: templates/ads/ads_detail.html:144
+msgid "Product:"
+msgstr "እቃ፡"
+
+#: templates/ads/ads_detail.html:147
+msgid "Price:"
+msgstr "ዋጋ፡"
+
+#: templates/ads/ads_detail.html:150
+msgid "Location:"
+msgstr "ከተማ፡"
+
+#: templates/ads/ads_detail.html:162
+msgid "Contact Dealer"
+msgstr "ባለቤቱን ያግኙ"
+
+#: templates/ads/ads_detail.html:178
+msgid "Hello, My Name is"
+msgstr "ሰላም, ስሜ"
+
+#: templates/ads/ads_detail.html:192
+msgid "I'm interested in this"
+msgstr "እፈልጋለሁ"
+  
+#: templates/ads/ads_detail.html:193
+msgid "I'd like to know your best price for this"
+msgstr "የመጨረሳዉ ዋጋ ስንት እንደሆነ ማወቅ ፈልጋልሁ"
+
+#: templates/ads/ads_detail.html:204
+msgid "I live in"
+msgstr "ያሉበት ከተማ"
+
+#: templates/ads/ads_detail.html:216
+msgid "You can reach me by email at"
+msgstr "ኢ-ሜይል"
+
+#: templates/ads/ads_detail.html:221
+msgid "Phone"
+msgstr "ስልክ ቁጥር"
+
+#: templates/ads/ads_detail.html:229
+msgid "Add comments"
+msgstr "ተጨማሪ"
+
+#: templates/ads/ads_detail.html:241
+msgid "Get a Question?"
+msgstr "ጥያቄ አለዎት? "
+
+#: templates/ads/pro_form.html:14 templates/ads/service_forms.html:14
+#: templates/includes/navbar.html:25 templates/pages/about.html:14
+#: templates/pages/contact.html:12 templates/pages/home.html:3
+msgid "Home"
+msgstr "ዋና"
+
+#: templates/ads/pro_form.html:15 templates/ads/pro_form.html:74
+#: templates/ads/service_forms.html:15 templates/ads/service_forms.html:83
+#: templates/includes/navbar.html:47
+msgid "Post"
+msgstr "ይልቀቁ"
+
+#: templates/ads/pro_form.html:26 templates/ads/service_forms.html:26
+msgid "Sell"
+msgstr "የሰዉ ሐይል"
+
+#: templates/base.html:7
+msgid "Z-dealer"
+msgstr "ዘ-ዲለር"
+
+#: templates/base.html:74
+msgid "Search"
+msgstr "ፈልግ"
+
+#: templates/includes/navbar.html:58
+msgid "Services"
+msgstr "አገልግሎታችን"
+
+#: templates/includes/navbar.html:69
+msgid "Contact"
+msgstr "ያግኙን"
+
+#: templates/includes/navbar.html:83
+msgid "Dashboard"
+msgstr "ዳስቦርድ"
+
+#: templates/includes/navbar.html:94
+msgid "Logout"
+msgstr "ዉጣ"
+
+#: templates/includes/navbar.html:109
+msgid "Login"
+msgstr "ግባ"
+
+#: templates/includes/navbar.html:119
+msgid "Register"
+msgstr "ይመዝገቡ"
+
+#: templates/pages/about.html:3
+msgid "About"
+msgstr "ስለኛ"
+
+#: templates/pages/about.html:12 templates/pages/about.html:15
+msgid "About Us"
+msgstr "ስለኛ"
+
+#: templates/pages/about.html:64
+msgid "Welcome"
+msgstr "እንካን በሰላም መጡ"
+
+#: templates/pages/contact.html:3 templates/pages/contact.html:10
+#: templates/pages/contact.html:13 templates/pages/contact.html:25
+msgid "Contact Us"
+msgstr "እኛን አግኙን"
+
+#: templates/pages/contact.html:61
+msgid "Send Message"
+msgstr "መልዕክት ይላኩ"
+
+#: templates/pages/contact.html:73
+msgid "Phone 1:"
+msgstr "ስልክ ቁጥር 1፡"
+
+#: templates/pages/contact.html:82
+msgid "Phone 2:"
+msgstr "ስልክ ቁጥር 2፡"
+
+#: templates/pages/contact.html:92
+msgid "Email"
+msgstr "ኢ-ሜይል"
+
+#: templates/pages/contact.html:101
+msgid "Web"
+msgstr "ዌብሳይት"
+
+#: templates/pages/home.html:17
+msgid "Wow Factor Standard"
+msgstr "ምርት እና አገልግልዎትን ያስተዋዉቁ  ይግዙ"
+
+#: templates/pages/home.html:26
+msgid "Explore Your Dream Car"
+msgstr "ምርት እና አገልግልዎትን ይቭጡ"
+
+#: templates/pages/home.html:35
+msgid "We Are Wheel"
+msgstr "በሁሉም የኢትዮጵያ ከተሞች"
+
+#: templates/pages/home.html:81
+msgid "Featured <span>Collactions</span>"
+msgstr "የኔ የምትሉት <span>ስብስብ</span>"
+
+#: templates/pages/home.html:175
+msgid " Latest <span>Product</span>"
+msgstr "የቅርብ ጊዜ  <span>ምርቶች</span>"
+
+#: templates/pages/home.html:269
+msgid "Latest <span>Service</span>"
+msgstr "የቅርብ ጊዜ  <span>የሰዉ ሐይል ስራወች</span>"
+
+#: templates/pages/home.html:360
+msgid "Latest <span>Collactions</span>"
+msgstr "የቅርብ ጊዜ <span>ስብስቦች</span> "
+
+#: templates/pages/home.html:453
+msgid "Do You Have Questions ?"
+msgstr "ጥያቄ አለወት ?"
+
+#: templates/pages/home.html:457
+msgid "Get in Touch"
+msgstr "ያግኙን"
+
+
+
+
+<!--
+<h1>
+{% get_current_language as CURRENT_LANGUAGE %}
+{% get_available_languages as AVAILABLE_LANGUAGES %}
+{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+{% for l in languages %}
+  <li>
+      <a href="/{{ l.code }}/"
+          {% if l.code == CURRENT_LANGUAGE %} class="active" {% endif %}>
+          {{ l.name_local}}
+      </a>
+  </li>
+  {% endfor %}
+</h1>   -->

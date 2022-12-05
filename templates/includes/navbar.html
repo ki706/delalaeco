@@ -1,0 +1,135 @@
+{% load static %}
+{% load i18n %}
+
+<!-- Main header start -->
+<header class="main-header  header-with-top ">
+    <div class="container" >
+       <nav class="navbar navbar-expand-lg navbar-light fixed-top"style="background-color:#ffffff;">
+            <a class="navbar-brand company-logo" href="{% url 'home' %}">
+                <h3 class= "ml-5" style="background-color:#fff124;">Z-dealer</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a
+                          {% if '/' == request.path %}
+                          class="nav-link active"
+                          {% else %}
+                          class="nav-link"
+                          {% endif %}
+                         href="{% url 'home' %}">
+                            
+                         {% trans "Home" %}
+                        </a>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+            <li><a class="dropdown-item" href="#">{% trans "Product" %} </a></li>
+            <li><a class="dropdown-item" href="#">{% trans "Human Resource" %}</a></li>
+          </ul>
+        </li>
+                    <li class="nav-item">
+                        <a
+                        {% if 'post' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'ads_creation' %}">
+                           {% trans "Post" %}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                        {% if 'services' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'services' %}">
+                            {% trans "Services" %}
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a
+                        {% if 'contact' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         href="{% url 'contact' %}">{% trans "Contact" %}</a>
+                    </li>
+
+                    <li>
+                        
+                  {% if user.is_authenticated %}
+                  <li>
+                      <a 
+                        {% if 'dashboard' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                          
+                      href="{% url 'dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> {% trans "Dashboard" %}</a>
+                  </li>
+
+                  <li>
+                      <a 
+                         {% if 'logout' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         
+                      href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> {% trans "Logout" %}</a>
+                      <form action="{% url 'logout' %}" id="logout" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden">
+                      </form>
+                  </li>
+                  {% else %}
+                    <li>
+                        <a 
+                         {% if 'logon' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         
+                        href="{% url 'account_login' %}" class="sign-in"><i class="fa fa-sign-in"></i> {% trans "Login" %}</a>
+                    </li>
+                    <li>
+                        <a 
+                         {% if 'register' in request.path %}
+                        class="nav-link active"
+                        {% else %}
+                        class="nav-link"
+                        {% endif %}
+                         
+                        href="{% url 'account_signup' %}" class="sign-in"><i class="fa fa-user"></i> {% trans "Register" %}</a>
+                    </li>
+                  {% endif %}
+                    </li>
+
+                    
+                    <li class="nav-item dropdown m-hide">
+                        <a href="#full-page-search" class="nav-link h-icon">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Main header end -->

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %} | Our  Inventory {% endblock %}
+{% block content %}
+
+{% load static %}
+{% load humanize %}
+     <!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Our  Inventory</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'ads' %}">Ads</a></li>
+                <li class="active">Sell</li>
+            </ul>
+        </div>
+    </div> 
+</div>
+<!-- Sub Banner end -->
+ 
+
+ 
+ 
+
+<div class="container">
+  
+
+</div>
+  
+
+
+
+
+<!-- Contact section start -->
+<div class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-section">
+                    <div class="logo-2">
+                        <a href="index.html">
+                            <img src="{% static 'img/logos/black-logo.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <h3>{% trans "What You Want to Post" %}</h3>
+                      <ul class="nav nav-tabs"> 
+  <li class="nav-item">
+    <a class="nav-link " data-toggle="tab"  href="#product">Product</a>
+  </li> 
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab"  href="#service">Service</a>
+  </li>  
+   
+</ul>
+
+<div class="container">
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade  " id="product">
+         <ul> 
+             <li>
+                 <a  href="{% url 'pro_form' %}">
+                       {% for cat in pro_cat %}
+                          <option value="{{cat}}">{{cat}}</option>
+                         {% endfor %}
+                 </a>
+             </li> 
+   
+         </ul>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade " id="service">
+         <ul> 
+             <li>
+                 <a  href="{% url 'service_form' %}">
+                   {% for cat in ser_cat %}
+                          <option value="{{cat}}">{{cat}}</option>
+                         {% endfor %}
+                 </a>
+             </li> 
+                 
+         </ul>
+    </div>
+    <div role="tabpanel" class="tab-pane fade " id="help">
+         <div class="alert alert-warning">HELP</div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact section end -->
+
+{% endblock %}

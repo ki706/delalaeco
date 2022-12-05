@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %} | Dashboard {% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Dashboard</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                <li class="active">{{ user.first_name }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!--   Dashboard Start   -->
+
+<div class="container mt-50 mb-50">
+    {% include 'includes/messages.html' %}
+	<div class="main-title" style="text-align:left !important;">
+            <h1>{% trans "Welcome" %} <span>{{ user.first_name }}</span></h1>
+            <p>{% trans "Here are the cars that you have inquired about" %}</p>
+		</div>
+                             <ul class="nav nav-tabs"> 
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab"  href="#product">{% trans "My Inquiry" %}</a>
+  </li> 
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab"  href="#service">{% trans "My Post" %}</a>
+  </li>  
+   
+</ul>
+		<div class="container">
+			
+			<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade  active " id="product">
+         <ul> 
+             <li>
+                 <a  href="#">
+                       {% if inquires %}
+	
+	<table class="table table-hover">
+	  <thead>
+		<tr>
+		  <th scope="col">{% trans "S.No" %}</th>
+		  <th scope="col">{% trans "Name" %}</th>
+		  <th scope="col">{% trans "Location" %}</th>
+		  <th scope="col">{% trans "Action" %}</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		{% for inquiry in inquires %}
+		<tr>
+		  <th scope="row">{{ forloop.counter }}</th> 
+		   
+		  <td>{{inquiry.car_title}}</td>
+		  <td>{{inquiry.city}}</td>
+		  <td><a href="{% url 'car_detail' inquiry.car_id %}" class="btn btn-outline-dark">{% trans "View Car" %}</a></td>
+		</tr>
+		{% endfor %}
+	  </tbody>
+	</table>
+	{% else %}
+		<h4>You have no inquiries</h4>
+	{% endif %}
+                 </a>
+             </li> 
+   
+         </ul>
+    </div>
+
+    <div role="tabpanel" class="tab-pane fade " id="service">
+         <ul> 
+             <li>
+                 <a  href="#">
+                   {% if combined %}
+	
+	<table class="table table-hover">
+	  <thead>
+		<tr>
+		  <th scope="col">{% trans "S.No" %}</th>
+		  <th scope="col">{% trans "Name" %}</th>
+		  <th scope="col">{% trans "Location" %}</th>
+		  <th scope="col">{% trans "Action" %}</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		{% for inquiry in user_ppost %}
+		<tr>
+		  <th scope="row">{{ forloop.counter }}</th> 
+		  
+		  <td>{{inquiry.title}}</td>
+		  <td>{{inquiry.location}}</td>
+		  <td><a href="{% url 'car_detail' inquiry.id %}" class="btn btn-outline-dark">{% trans "View Car" %}</a></td>
+		</tr>
+		{% endfor %}
+		{% for inquiry in user_spost %}
+		<tr>
+		  <th scope="row">{{ forloop.counter }}</th> 
+		   
+		  <td>{{inquiry.title}}</td>
+		  <td>{{inquiry.location}}</td>
+		  <td><a href="{% url 'ser_detail' inquiry.id %}" class="btn btn-outline-dark">{% trans "View Car" %}</a></td>
+		</tr>
+		
+		{% endfor %}
+
+	  </tbody>
+	</table>
+	{% else %}
+		<h4>You have no inquiries</h4>
+	{% endif %}
+                 </a>
+             </li> 
+                 
+         </ul>
+    </div>
+    <div role="tabpanel" class="tab-pane fade " id="help">
+         <div class="alert alert-warning">HELP</div>
+    </div>
+  </div>
+		</div>
+
+		 <!--
+	{% if inquires %}
+	
+	<table class="table table-hover">
+	  <thead>
+		<tr>
+		  <th scope="col">S.No</th>
+		  <th scope="col">Car Name</th>
+		  <th scope="col">Location</th>
+		  <th scope="col">Action</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		{% for inquiry in inquires %}
+		<tr>
+		   <th scope="row">{{ forloop.counter }}</th> 
+		  
+		  <td>{{inquiry.car_title}}</td>
+		  <td>{{inquiry.city}}</td>
+		  <td><a href="{% url 'car_detail' inquiry.car_id %}" class="btn btn-outline-dark">View Car</a></td>
+		</tr>
+		{% endfor %}
+	  </tbody>
+	</table>
+	{% else %}
+		<h4>You have no inquiries</h4>
+	{% endif %}   -->
+</div>
+
+<!--   Dashboard End   -->
+
+{% endblock %}
