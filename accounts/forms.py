@@ -14,7 +14,7 @@ class MyCustomSignupForm(SignupForm):
         #tg_link = forms.CharField(max_length=15)
         #email = forms.EmailField(label="E-mhhhhail")
         #password1 = forms.PasswordField(label="")
-        phone_number.error_messages['invalid'] = '0911121314'
+        phone_number.error_messages['invalid'] = 'Use correct format eg 0920302030'
         
         def clean_phone_number(self):
             #super(MyCustomSignupForm, self).clean()
@@ -23,6 +23,7 @@ class MyCustomSignupForm(SignupForm):
             msg = 'A user is already registered with this phone'
             if CustomUser.objects.filter(phone_number=phone_number).exists():
                 #self._errors['phone_number'] = self.error_class([msg])
+               
                 raise forms.ValidationError(msg)
             else:
                 return phone_number         
