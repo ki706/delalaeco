@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %} | {% trans "Home" %} {% endblock %}
+{% block content %}
+
+{% load humanize %}
+{% load static %}
+ 
+
+
+<!-- Sub banner start -->
+<div class="sub-banner overview-bgi">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Our Car Inventory</h1>
+            <ul class="breadcrumbs">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li class="active">Cars</li>
+            </ul>
+        </div>
+    </div> 
+</div>
+<!-- Sub Banner end -->
+
+
+
+<!-- Featured car start -->
+<div class="featured-car content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>{% blocktrans %}Featured <span>Collactions</span>{% endblocktrans %}</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <!-- Slick slider area start -->
+        <div class="slick-slider-area clearfix">
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+              {% for car in featured_cars %}
+                <div class="slick-slide-item ">
+                    <div class="car-box-3">
+                        <div class="car-thumbnail">
+                            <a href="{% url 'car_detail' car.id %}" class="car-img">
+                                <div class="tag-2">Featured</div>
+                                <div class="price-box">
+                                    <span>${{car.price | intcomma}}</span>
+                                </div>
+                                <img class="d-block w-100" src="{{car.car_photo.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            </a>
+                            <div class="carbox-overlap-wrapper">
+                                <div class="overlap-box">
+                                    <div class="overlap-btns-area">
+                                        <div class="car-magnify-gallery">
+                                            <a href="{{car.car_photo.url}}" class="overlap-btn">
+                                                <i class="fa fa-expand"></i>
+                                                <img class="hidden" src="{{car.car_photo.url}}">
+                                            </a>
+                                            {% if car.car_photo_1 %}
+                                            <a href="{{car.car_photo_1.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_1.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_2 %}
+                                            <a href="{{car.car_photo_2.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_2.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_3 %}
+                                            <a href="{{car.car_photo_3.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_3.url}}">
+                                            </a>
+                                            {% endif %}
+                                            {% if car.car_photo_4 %}
+                                            <a href="{{car.car_photo_4.url}}" class="hidden">
+                                                <img class="hidden" src="{{car.car_photo_4.url}}">
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <h1 class="title">
+                                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+                            </h1>
+                            <div class="location">
+                                <a href="{% url 'car_detail' car.id %}">
+                                    <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+                                </a>
+                            </div>
+                            <ul class="facilities-list clearfix">
+                                <li>{{car.fuel_type}}</li>
+                                <li>{{car.miles | intcomma}} km</li>
+                                <li>{{car.transmission}}</li>
+                                <li>{{car.body_style}}</li>
+                                <li>{{car.color}}</li>
+                                <li>{{car.year}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            </div>
+            <div class="slick-btn">
+                <div class="slick-prev slick-arrow-buton sab-4">
+                    <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="slick-next slick-arrow-buton sab-3">
+                    <i class="fa fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured car end -->
+
+ 
+
+{% if pro_cat %}
+<!--  LATEST PRODUCT start -->
+<div class="featured-car  ">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>{% blocktrans %}Latest <span>Product</span>{% endblocktrans %}</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="row">
+          {% for car in pro_cat %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="car-box">
+                    <div class="car-thumbnail">
+                        <a href="{% url 'car_detail' car.id %}" class="car-img">
+                            <div class="tag">{% trans "For Sale" %}</div>
+                            <img class="d-block w-100" src="{{car.product_pics.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            <div class="facilities-list clearfix">
+                                <ul>
+                                     <li>
+                                         <div class="price-box">
+                                    <span>{{car.price | intcomma}}</span>
+                                </div>
+                                    </li>
+                                 </ul>
+                            </div>
+                        </a>
+                        <div class="carbox-overlap-wrapper">
+                            <div class="overlap-box">
+                                <div class="overlap-btns-area">
+                                    <div class="car-magnify-gallery">
+                                        <a href="{{car.product_pics.url}}" class="overlap-btn">
+                                            <i class="fa fa-expand"></i>
+                                            <img class="hidden" src="{{car.product_pics.url}}">
+                                        </a>
+                                        {% if car.product_pics1 %}
+                                        <a href="{{car.product_pics1.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.product_pics1.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_2 %}
+                                        <a href="{{car.car_photo_2.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_2.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_3 %}
+                                        <a href="{{car.car_photo_3.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_3.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_4 %}
+                                        <a href="{{car.car_photo_4.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_4.url}}">
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <h1 class="title">
+                            <a href="{% url 'car_detail' car.id %}">{{car.title}}</a>
+                        </h1>
+                         <div class="location">
+                                <a href="{% url 'car_detail' car.id %}">
+                                    <i class="flaticon-pin"></i> {{ car.location}}
+                                </a>
+                            </div>
+                    </div>
+                    <div class="footer clearfix">
+                        <div class="pull-left ratings days">
+                            
+                        </div>
+                        <div class="pull-right">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+        <!-- Page navigation start -->
+                <div class="pagination-box p-box-2 text-center">
+                    <nav aria-label="Page navigation example">
+                      {% if pro_cat.has_other_pages %}
+                        <ul class="pagination">
+                          {% if pro_cat.has_previous %}
+                              <li class="page-item">
+                                  <a class="page-link" href="?page={{pro_cat.previous_page_number}}"><i class="fa fa-angle-left"></i></a>
+                              </li>
+                          {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-left"></i></a>
+                            </li>
+                          {% endif %}
+
+                          {% for i in pro_cat.paginator.page_range %}
+                            {% if pro_cat.number == i %}
+                              <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
+                            {% else %}
+                              <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% endif %}
+                          {% endfor %}
+
+                          {% if pro_cat.has_next %}
+                              <li class="page-item">
+                                  <a class="page-link" href="?page={{pro_cat.next_page_number}}"><i class="fa fa-angle-right"></i></a>
+                              </li>
+                          {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-right"></i></a>
+                            </li>
+                          {% endif %}
+
+                        </ul>
+                      {% endif %}
+                    </nav>
+                </div>
+    </div>
+</div>
+
+{% endif %}
+<!-- Rent car end -->
+
+
+
+ 
+
+
+<!--  LATEST service start -->
+{% if ser_cat %}
+<div class="featured-car  ">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>{% blocktrans %}Latest <span>Service</span>{% endblocktrans %}</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="row">
+          {% for car in ser_cat %}
+            <div class="col-lg-4 col-md-6 col-sm-6 col-6">
+                <div class="car-box">
+                    <div class="car-thumbnail">
+                        <a href="{% url 'ser_detail' car.id %}" class="car-img">
+                            
+                            <img class="d-block w-100" src="{{car.service_pics.url}}" alt="car" style="min-height: 262px; max-height: 262px;">
+                            <div class="facilities-list clearfix">
+                                <ul>
+                                     <li>
+                                   
+                                    </li>
+                                 </ul>
+                            </div>
+                        </a>
+                        <div class="carbox-overlap-wrapper">
+                            <div class="overlap-box">
+                                <div class="overlap-btns-area">
+                                    <div class="car-magnify-gallery">
+                                        <a href="{{car.service_pics.url}}" class="overlap-btn">
+                                            <i class="fa fa-expand"></i>
+                                            <img class="hidden" src="{{car.service_pics.url}}">
+                                        </a>
+                                        {% if car.service_pics1 %}
+                                        <a href="{{car.service_pics1.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.service_pics1.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_2 %}
+                                        <a href="{{car.car_photo_2.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_2.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_3 %}
+                                        <a href="{{car.car_photo_3.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_3.url}}">
+                                        </a>
+                                        {% endif %}
+                                        {% if car.car_photo_4 %}
+                                        <a href="{{car.car_photo_4.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.car_photo_4.url}}">
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <h1 class="title">
+                            <a href="{% url 'ser_detail' car.id %}">{{car.title}}</a>
+                        </h1>
+                         <div class="location">
+                                <a href="{% url 'ser_detail' car.id %}">
+                                    <i class="flaticon-pin"></i> {{ car.location}}
+                                </a>
+                            </div>
+                    </div>
+                    <div class="footer clearfix">
+                        <div class="pull-left ratings days">
+                            
+                        </div>
+                        <div class="pull-right">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+        <!-- Page navigation start -->
+                <div class="pagination-box p-box-2 text-center">
+                    <nav aria-label="Page navigation example">
+                      {% if ser_cat.has_other_pages %}
+                        <ul class="pagination">
+                          {% if ser_cat.has_previous %}
+                              <li class="page-item">
+                                  <a class="page-link" href="?page={{ser_cat.previous_page_number}}"><i class="fa fa-angle-left"></i></a>
+                              </li>
+                          {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-left"></i></a>
+                            </li>
+                          {% endif %}
+
+                          {% for i in ser_cat.paginator.page_range %}
+                            {% if ser_cat.number == i %}
+                              <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
+                            {% else %}
+                              <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                            {% endif %}
+                          {% endfor %}
+
+                          {% if ser_cat.has_next %}
+                              <li class="page-item">
+                                  <a class="page-link" href="?page={{ser_cat.next_page_number}}"><i class="fa fa-angle-right"></i></a>
+                              </li>
+                          {% else %}
+                            <li class="page-item disabled">
+                                <a class="page-link"><i class="fa fa-angle-right"></i></a>
+                            </li>
+                          {% endif %}
+
+                        </ul>
+                      {% endif %}
+                    </nav>
+                </div>
+    </div>
+</div>
+
+{% endif %}
+<!-- latest  ser end -->
+
+
+
+
+ 
+ 
+
+<!-- Intro section start -->
+<div class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="intro-text">
+                    <h3>{% trans "Do You Have Questions ?" %}</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <a href="{% url 'contact' %}" class="btn btn-md">{% trans "Get in Touch" %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Intro section end -->
+
+
+{% endblock %}

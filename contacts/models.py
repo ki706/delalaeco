@@ -1,13 +1,13 @@
 from django.db import models
 from datetime import datetime
-from ads.models import Service
+from ads.models import Service,Product
 # Create your models here.
 from django.utils.translation import gettext_lazy as _
 
 class ProductContact(models.Model):
     first_name = models.CharField(max_length=100,verbose_name=_('firs tname'))
     last_name = models.CharField(max_length=100,verbose_name=_('last name'))
-    car_id = models.IntegerField(verbose_name=_('product id'))
+    car_id = models.ForeignKey(Product,on_delete=models.CASCADE, verbose_name=_('product id'))
     customer_need = models.CharField(max_length=100,verbose_name=_('customer need'))
     car_title = models.CharField(max_length=100,verbose_name=_('car title'))
     city = models.CharField(max_length=100,verbose_name=_('city'))
@@ -29,7 +29,7 @@ class ProductContact(models.Model):
 class ServiceContact(models.Model):
     first_name = models.CharField(max_length=100,verbose_name=_('firs tname'))
     last_name = models.CharField(max_length=100,verbose_name=_('last name'))
-    car_id = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name=_('human resource id'))
+    ser_id = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name=_('human resource id'))
     customer_need = models.CharField(max_length=100,verbose_name=_('customer need'))
     car_title = models.CharField(max_length=100,verbose_name=_('service title'))
     city = models.CharField(max_length=100,verbose_name=_('city'))

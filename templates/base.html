@@ -44,7 +44,7 @@
 <div class="page_loader"></div>
 
  
-
+{% include 'includes/topbar.html' %}
 {% include 'includes/navbar.html' %}
 
 
@@ -55,12 +55,13 @@
 {% endblock %}
 
 
- 
+
 <!-- Full Page Search -->
 <div id="full-page-search">
     <button type="button" class="close">×</button>
     <form action="{% url 'search' %}" class="search-header">
         <input type="search" value="" placeholder="type keyword(s) here. " name='keyword' />
+
         <button type="submit" class="btn btn-sm button-theme">{% trans "Search" %}</button>
     </form>
 </div>

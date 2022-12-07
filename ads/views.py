@@ -13,11 +13,12 @@ def cars(request):
     page = request.GET.get('page')
     paged_cars = paginator.get_page(page)
     pro_tag = ProductCatagory.objects.all()
+    ser_tag = ServiceCatagory.objects.all()
     city_search = Product.objects.values_list('location', flat=True).distinct()
-    
+    combined_tag = list(pro_tag) + list(ser_tag)
     data = {
         'cars' : paged_cars,
-        'pro_tag' :pro_tag,
+        'combined_tag' : combined_tag,
         'city_search': city_search,
         
     }
@@ -82,7 +83,8 @@ class ProductCreationView(LoginRequiredMixin,CreateView):
 
 def car_detail(request, id):
     single_car = get_object_or_404(Product, pk=id)
-    related_pro =  Product.objects.filter(catagory=single_car.catagory).exclude(pk=single_car.id)[:20]
+    related_pro =  Product.objects.filter(catagory=single_car.catagory).exclude(pk=single_car.id)[:14]
+    
     data = {
         'single_car' : single_car,
         'related_pro': related_pro,
@@ -94,7 +96,8 @@ def car_detail(request, id):
 def ser_detail(request, id):
     single_car = get_object_or_404(Service, pk=id)
     
-    related_ser =  Service.objects.filter(catagory=single_car.catagory).exclude(pk=single_car.id)[:20]
+    related_ser =  Service.objects.filter(catagory=single_car.catagory).exclude(pk=single_car.id)[:14]
+   
     data = {
         'single_car' : single_car,
         'related_ser': related_ser,

@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
+import django.conf.locale
+from django.conf import global_settings
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -122,24 +124,51 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
-
-
 LANGUAGES = (
-    ('en-us',_('English')),
+    ('en',_('English')),
     ('am',_('Amharic')),
     ) 
+
+
+EXTRA_LANG_INFO ={
+    'am':{
+    'bidi':False,
+    'code':'am',
+    'name':'Amharic',
+    'name_local':'አማርኛ',
+    },
+    'en':{
+    'bidi':False,
+    'code':'en',
+    'name':'English',
+    'name_local':_('English'),
+    },
+}    
+"""
+LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
+django.conf.locale.LANG_INFO = LANG_INFO
+LANGUAGES_BIDI =  global_settings.LANGUAGES_BIDI + ["am"]"""
+LANG_INFO = dict(EXTRA_LANG_INFO.items())
+django.conf.locale.LANG_INFO = LANG_INFO
+
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
 
+CKEDITOR_CONFIGS ={
+    'default':{
+    'toolbar': None,
+    'width': 'auto,'
+    },
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

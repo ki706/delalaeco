@@ -65,12 +65,17 @@ def sinquiry(request):
         if request.user.is_authenticated:
             user_id = request.user.id
             has_contacted = ServiceContact.objects.all().filter(ser_id=ser_id, user_id = user_id)
+            has_inquiried = Service.objects.filter(id=ser_id, user_id = user_id)
             if has_contacted:
                 messages.error(request, 'You have already made an inquiry about this car. Please wait until we get back to you.')
-                return redirect('/ads/s/'+car_id)
-            print('idddd'+ ser_id)
-            ser_id = int(ser_id)
-    contact = ServiceContact(ser_id=ser_id, car_title=car_title, user_id=user_id,
+                return redirect('/ads/s/'+ser_id)
+
+
+            if has_inquiried:
+                messages.error(request, 'You Can not  inquiry Your Post.')
+                return redirect('/ads/s/'+ser_id)     
+             
+    contact = ServiceContact(ser_id_id=ser_id, car_title=car_title, user_id=user_id,
         first_name=first_name, last_name=last_name, customer_need=customer_need, city=city,
         email=email, phone=phone, message=message)
     """
@@ -86,4 +91,4 @@ def sinquiry(request):
      """
     contact.save()
     messages.success(request, 'Your request has been submitted, we will get back to you shortly.')
-    return redirect('/ads/s/'+car_id)
+    return redirect('/ads/s/'+ser_id)

@@ -14,6 +14,8 @@ from django.core.files import File
 from ckeditor.fields import RichTextField 
 from category.models import ProductCatagory,ServiceCatagory
 from django.utils.translation import gettext_lazy as _
+from PIL import Image, ImageDraw, ImageFont
+
 
 location = (
         ('Addis Ababa', 'Addis Ababa'),
@@ -48,11 +50,24 @@ class Product(models.Model):
         ordering =('-created',)
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
-        
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        product_pics = Image.open(self.product_pics.path)
+        draw = ImageDraw.Draw(product_pics)
+        font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf",30)
+        width, height = product_pics.size
+        myword = "Z-dealer.com"
+        marigin = 10
+        textwidth, textheight = draw.textsize(myword, font)
+        x =width /2- textwidth/2     
+        y = height/2 - textheight/2
+        draw.text((x,y),myword,(255,255,255),font=font)
+        product_pics.save(self.product_pics.path)
     def __str__(self):
         return self.title
 
-       
+           
  
     def get_absolute_url(self): # new
              return reverse('car_detail', args=[str(self.id)])
