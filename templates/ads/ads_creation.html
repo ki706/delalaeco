@@ -12,9 +12,9 @@
         <div class="breadcrumb-areas">
             <h1>Our  Inventory</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">{% trans 'Home' %}</a></li>
                 <li><a href="{% url 'ads' %}">Ads</a></li>
-                <li class="active">Sell</li>
+                <li class="active">{% trans 'Sell' %}</li>
             </ul>
         </div>
     </div> 
@@ -48,10 +48,10 @@
                     <h3>{% trans "What You Want to Post" %}</h3>
                       <ul class="nav nav-tabs"> 
   <li class="nav-item">
-    <a class="nav-link " data-toggle="tab"  href="#product">Product</a>
+    <a class="nav-link " data-toggle="tab"  href="#product">{% trans 'Product' %}</a>
   </li> 
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab"  href="#service">Service</a>
+    <a class="nav-link" data-toggle="tab"  href="#service">{% trans 'Service' %}</a>
   </li>  
    
 </ul>

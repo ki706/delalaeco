@@ -3,9 +3,9 @@
 {% load crispy_forms_tags %}
 {% block title %} | Our  Inventory {% endblock %}
 {% block content %}
-
-{% load humanize %}
 {% load static %}
+{% load humanize %}
+
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -35,7 +35,8 @@
                 <!-- {{form|crispy}} -->
                 <div id = "house-form" class="mt-2">
                       
-                     <h1>{% blocktrans %}Complete <span>This</span>Form{% endblocktrans %}</h1>
+                     <h1>{% blocktrans %}Complete <span>This</span> Form{% endblocktrans %}</h1>
+                     {{form.media}}
                           <div class="row">
                                 <div class="col-lg-4 col-md-6  col-sm-12 col-12">
                                     {{form.catagory|as_crispy_field }}

@@ -36,7 +36,7 @@ def pinquiry(request):
 
 
 
-    contact = ProductContact(car_id=car_id, car_title=car_title, user_id=user_id,
+    contact = ProductContact(car_id_id=car_id, car_title=car_title, user_id=user_id,
         first_name=first_name, last_name=last_name, customer_need=customer_need, city=city,
         email=email, phone=phone, message=message)
      

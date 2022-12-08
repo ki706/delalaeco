@@ -171,8 +171,7 @@ Send Security Code
         print 'http error ... code: %d , msg: %s ' % (result.status_code, result.content)                                
 The response contains two nodes acknowledge node and response node. Inspect the value of acknowledge to see if your request has secceeded or not. Below is a typical sample response object for this call.
 
-A successful response object will contain, among other things, the code that's sent for the user, and a unique verification id that you can save for later use in the verification processs.
-
+ 
 SAMPLE SUCCESS RESULT
 SAMPLE FAILURE RESULT
 

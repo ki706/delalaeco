@@ -12,7 +12,7 @@
         <div class="breadcrumb-areas">
             <h1>{{ single_car.title }}</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'home' %}">{% trans 'Home'}</a></li>
                 <li class="active">{{ single_car.title }}</li>
             </ul>
         </div>
@@ -156,7 +156,7 @@
                 <div class="sidebar-right">
                     <!-- Advanced search start -->
                     <div class="widget advanced-search ">
-                        <button class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Send message</button>
+                        <button class="btn btn-outline-danger bomd btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">{% trans 'Send message' %}</button>
 
 
                         <br>
@@ -263,7 +263,7 @@
                     </div>
                     <!-- Question start -->
                     <div class="widget question">
-                        <h5 class="sidebar-title">Get a Question?</h5>
+                        <h5 class="sidebar-title">{% trans 'Get a Question?' %}</h5>
                         <ul class="contact-info">
                             <li>
                                 <i class="flaticon-pin"></i>Addis Ababa
@@ -299,7 +299,7 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title">
-            <h1>You May <span>Like</span></h1>
+             <h1>{% blocktrans %}You May <span>Like</span>{% endblocktrans %}</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="row">
@@ -308,8 +308,8 @@
                 <div class="car-box">
                     <div class="car-thumbnail">
                         <a href="{% url 'ser_detail' car.id %}" class="car-img">
-                             
-                            <img class="d-block w-100" src="{{car.service_pics.url}}" alt="car">
+                            <img class="d-block w-100" src="{{car.service_pics.url}}" alt="car"
+                            style="min-height: 262px; max-height: 262px;">
                             <div class="facilities-list clearfix">
                                 <ul>
                                     <li>

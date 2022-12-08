@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 12:39+0000\n"
+"POT-Creation-Date: 2022-12-08 06:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -377,8 +377,7 @@ msgid "Signup"
 msgstr ""
 
 #: accounts/templates/account/signup.html:8
-#: accounts/templates/account/signup.html:18 templates/account/login.html:19
-#: templates/account/signup.html:23
+#: accounts/templates/account/signup.html:18
 msgid "Sign Up"
 msgstr "ይመዝገቡ"
 
@@ -457,81 +456,96 @@ msgid ""
 "mail address</a>."
 msgstr ""
 
-#: ads/models.py:33 ads/models.py:65
+#: ads/apps.py:7
+msgid "ads"
+msgstr ""
+
+#: ads/models.py:35 ads/models.py:68
 msgid "user"
 msgstr "የለቀቀዉ"
 
-#: ads/models.py:34 ads/models.py:66 category/models.py:7 category/models.py:18
+#: ads/models.py:36 ads/models.py:69 category/models.py:7 category/models.py:18
 msgid "catagory"
 msgstr "አይነት"
 
-#: ads/models.py:35 ads/models.py:67
+#: ads/models.py:37 ads/models.py:70
 msgid "title"
 msgstr "ርእስ"
 
-#: ads/models.py:36
+#: ads/models.py:38
 msgid "price"
 msgstr "ዋጋ"
 
-#: ads/models.py:37 ads/models.py:71
+#: ads/models.py:39 ads/models.py:74
 msgid "location"
 msgstr "ከተማ"
 
-#: ads/models.py:38 ads/models.py:72
+#: ads/models.py:40 ads/models.py:75
 msgid "description"
 msgstr "ተጨማሪ ማብራርያ"
 
-#: ads/models.py:39 ads/models.py:73
+#: ads/models.py:41 ads/models.py:76
 msgid "is_avilable"
 msgstr "ገበያ ላይ አለ"
 
-#: ads/models.py:40 ads/models.py:74
+#: ads/models.py:42 ads/models.py:77
 msgid "is_verified"
 msgstr "ተረጋግጣል"
 
-#: ads/models.py:41
+#: ads/models.py:43
 msgid "product_picture"
 msgstr "የዕቃ ፎቶ"
 
-#: ads/models.py:42
+#: ads/models.py:44
 msgid "product_picture1"
 msgstr "የዐቃ ፎቶ1"
 
-#: ads/models.py:44 ads/models.py:79
+#: ads/models.py:46 ads/models.py:82
 msgid "created"
 msgstr "የተለቀቀነት ቀን"
 
-#: ads/models.py:45 ads/models.py:80
+#: ads/models.py:47 ads/models.py:83
 msgid "updated"
 msgstr "የተሳሳለበት ቀን"
 
-#: ads/models.py:49 templates/includes/navbar.html:35
+#: ads/models.py:51 templates/ads/ads_creation.html:51
+#: templates/includes/navbar.html:35
 msgid "Product"
 msgstr "የዕቃ ዝርዝር"
 
-#: ads/models.py:50
+#: ads/models.py:52
 msgid "Products"
 msgstr "የዕቃ ዝርዝሮች"
 
-#: ads/models.py:68
+#: ads/models.py:71
 msgid "skill"
 msgstr "ችሎታ"
 
-#: ads/models.py:69
+#: ads/models.py:72
 msgid "experiance"
 msgstr "የስራ ልምድ"
 
-#: ads/models.py:75 ads/models.py:76
+#: ads/models.py:78 ads/models.py:79
 msgid "service_picture"
 msgstr "ፎቶ"
 
-#: ads/models.py:84 templates/includes/navbar.html:36
+#: ads/models.py:87 templates/includes/navbar.html:36
 msgid "Human Resource"
 msgstr "የሰዉ ሐይል ስራ ዝርዝር"
 
-#: ads/models.py:85
+#: ads/models.py:88
 msgid "Human Resources"
 msgstr "የሰዉ ሐይል ስራ ዝርዝሮች"
+
+#: category/apps.py:7
+msgid "category app"
+msgstr "አይነት/ምድብ"
+
+#: category/models.py:8 category/models.py:19
+#, fuzzy
+#| msgid "product_picture"
+msgid "category_picture"
+msgstr "የዕቃ ፎቶ"
 
 #: category/models.py:11
 msgid "Product Category"
@@ -549,77 +563,91 @@ msgstr "የሰዉ ሐይል ስራ አይነት"
 msgid "Human Resources Categories"
 msgstr "የሰዉ ሐይል ስራ አይነቶች"
 
-#: contacts/models.py:8 contacts/models.py:30
+#: contacts/apps.py:6
+msgid "User requested items "
+msgstr "መገናኘት የፈለጉ ደንበኞች "
+
+#: contacts/models.py:9 contacts/models.py:46
 msgid "firs tname"
 msgstr "የመጀመርያ ስም"
 
-#: contacts/models.py:9 contacts/models.py:31
+#: contacts/models.py:10 contacts/models.py:47
 msgid "last name"
 msgstr "የአባት ስም"
 
-#: contacts/models.py:10
+#: contacts/models.py:11
 msgid "product id"
 msgstr "የእቃዉ መለያ ቁጥር"
 
-#: contacts/models.py:11 contacts/models.py:33
+#: contacts/models.py:12 contacts/models.py:49
 msgid "customer need"
 msgstr "የደንበኛዉ ፍላጎት"
 
-#: contacts/models.py:12
+#: contacts/models.py:13
 msgid "car title"
 msgstr "የእቃዉ ርዕስ"
 
-#: contacts/models.py:13 contacts/models.py:35
+#: contacts/models.py:14 contacts/models.py:51
 msgid "city"
 msgstr "ከተማ"
 
-#: contacts/models.py:14 contacts/models.py:36
+#: contacts/models.py:15 contacts/models.py:52
 msgid "email"
 msgstr "ኢ-ሜይል"
 
-#: contacts/models.py:15 contacts/models.py:37
+#: contacts/models.py:16 contacts/models.py:53
 msgid "phone number"
 msgstr "ስልክ ቁጥር"
 
-#: contacts/models.py:16 contacts/models.py:38
+#: contacts/models.py:17 contacts/models.py:54
 msgid "message"
 msgstr "መልዕክት"
 
-#: contacts/models.py:17 contacts/models.py:39
+#: contacts/models.py:18 contacts/models.py:55
 msgid "user id"
 msgstr "መለያ ቁጥር"
 
-#: contacts/models.py:18 contacts/models.py:40
+#: contacts/models.py:19 contacts/models.py:56
+msgid "message to customer"
+msgstr "መልዕክት ለደንበኛዉ ላክ"
+
+#: contacts/models.py:20 contacts/models.py:57
 msgid "created date"
 msgstr "የተለቀቀበት ቀን"
 
-#: contacts/models.py:22
+#: contacts/models.py:24
 msgid "Product Contact"
 msgstr "ዕቃ ፈላጊ"
 
-#: contacts/models.py:23
+#: contacts/models.py:25
 msgid "Product Contacts"
 msgstr "ዕቃ ፈላጊዎች"
 
-#: contacts/models.py:32
+#: contacts/models.py:48
 msgid "human resource id"
 msgstr "የሰዎች መለያ ቁጥር"
 
-#: contacts/models.py:34
+#: contacts/models.py:50
 #, fuzzy
 #| msgid "service_picture"
 msgid "service title"
 msgstr "ፎቶ"
 
-#: contacts/models.py:44
+#: contacts/models.py:61
 msgid "Human Resource Contact"
 msgstr "የሰዉ ሐይል ፈላጊ"
 
-#: contacts/models.py:45
+#: contacts/models.py:62
 msgid "Human Resource Contacts"
 msgstr "የሰዉ ሐይል ፈላጊዎች"
 
-#: dlela/settings.py:135
+#: contacts/models.py:79
+#, fuzzy
+#| msgid "message to customer"
+msgid "message_to_customer"
+msgstr "መልዕክት ለደንበኛዉ ላክ"
+
+#: dlela/settings.py:135 dlela/settings.py:151
 msgid "English"
 msgstr "English"
 
@@ -627,21 +655,33 @@ msgstr "English"
 msgid "Amharic"
 msgstr "አማርኛ"
 
-#: templates/account/login.html:38 templates/includes/navbar.html:109
+#: templates/account/login.html:18 templates/account/login.html:21
+#: templates/account/login.html:37 templates/includes/navbar.html:109
 msgid "Login"
 msgstr "ግባ"
 
-#: templates/account/login.html:52
+#: templates/account/login.html:20 templates/account/signup.html:25
+#: templates/accounts/dashboard.html:13 templates/ads/ads_creation.html:15
+#: templates/ads/ads_detail.html:15 templates/ads/pro_form.html:15
+#: templates/ads/service_forms.html:15 templates/includes/navbar.html:25
+#: templates/pages/about.html:14 templates/pages/catagories.html:3
+#: templates/pages/catagories.html:17 templates/pages/contact.html:12
+#: templates/pages/home.html:3
+msgid "Home"
+msgstr "ዋና"
+
+#: templates/account/login.html:51
 #, fuzzy
 #| msgid "Login"
 msgid "Login "
 msgstr "ግባ"
 
-#: templates/account/login.html:63
+#: templates/account/login.html:55
 msgid "Don't have an account? Then please Register "
 msgstr "አካዉንት የለዎትም?  እባክዎ ይመዝገቡ"
 
-#: templates/account/login.html:63 templates/includes/navbar.html:119
+#: templates/account/login.html:55 templates/account/signup.html:23
+#: templates/account/signup.html:26 templates/includes/navbar.html:119
 msgid "Register"
 msgstr "ይመዝገቡ"
 
@@ -655,22 +695,15 @@ msgstr "አካዉንት ይክፈቱ"
 msgid "Register "
 msgstr "ይመዝገቡ"
 
-#: templates/account/signup.html:75
+#: templates/account/signup.html:69
 msgid "Already have an account? Then please "
 msgstr "አካዉንት አለዎት? እባክዎ"
 
-#: templates/account/signup.html:75
+#: templates/account/signup.html:69
 #, fuzzy
 #| msgid "Sign Up"
-msgid "Sign in"
+msgid " Sign in"
 msgstr "ይመዝገቡ"
-
-#: templates/accounts/dashboard.html:13 templates/ads/pro_form.html:15
-#: templates/ads/service_forms.html:15 templates/includes/navbar.html:25
-#: templates/pages/about.html:14 templates/pages/contact.html:12
-#: templates/pages/home.html:3
-msgid "Home"
-msgstr "ዋና"
 
 #: templates/accounts/dashboard.html:26 templates/pages/about.html:64
 msgid "Welcome"
@@ -709,11 +742,22 @@ msgstr "ድርጊት"
 msgid "View Car"
 msgstr "እይ"
 
+#: templates/ads/ads_creation.html:17 templates/ads/pro_form.html:27
+#: templates/ads/service_forms.html:27
+msgid "Sell"
+msgstr "የሰዉ ሐይል"
+
 #: templates/ads/ads_creation.html:48
 msgid "What You Want to Post"
 msgstr "ምን መልቀቅ ይፈልጋሉ"
 
-#: templates/ads/ads_detail.html:137
+#: templates/ads/ads_creation.html:54
+#, fuzzy
+#| msgid "Services"
+msgid "Service"
+msgstr "አገልግሎታችን"
+
+#: templates/ads/ads_detail.html:137 templates/ads/ser_detail.html:159
 msgid "Send message"
 msgstr "መልዕክት ይላኩ"
 
@@ -761,31 +805,31 @@ msgstr "ስልክ ቁጥር"
 msgid "Add comments"
 msgstr "ተጨማሪ"
 
-#: templates/ads/ads_detail.html:241
+#: templates/ads/ads_detail.html:241 templates/ads/ser_detail.html:266
 msgid "Get a Question?"
 msgstr "ጥያቄ አለዎት? "
 
-#: templates/ads/pro_form.html:16 templates/ads/pro_form.html:75
-#: templates/ads/service_forms.html:16 templates/ads/service_forms.html:85
+#: templates/ads/ads_detail.html:275 templates/ads/ser_detail.html:302
+msgid "You May <span>Like</span>"
+msgstr "ሌሎች  <span>ተመሳሳይ</span>"
+
+#: templates/ads/pro_form.html:16 templates/ads/pro_form.html:76
+#: templates/ads/service_forms.html:16 templates/ads/service_forms.html:86
 #: templates/includes/navbar.html:47
 msgid "Post"
 msgstr "ይልቀቁ"
 
-#: templates/ads/pro_form.html:27 templates/ads/service_forms.html:27
-msgid "Sell"
-msgstr "የሰዉ ሐይል"
-
 #: templates/ads/pro_form.html:37 templates/ads/service_forms.html:38
 #, fuzzy
 #| msgid "Featured <span>Collactions</span>"
-msgid "Complete <span>This</span>Form"
+msgid "Complete <span>This</span> Form"
 msgstr "የኔ የምትሉት <span>ስብስብ</span>"
 
 #: templates/base.html:7
 msgid "Z-dealer"
 msgstr "ዘ-ዲለር"
 
-#: templates/base.html:62
+#: templates/base.html:65
 msgid "Search"
 msgstr "ፈልግ"
 
@@ -816,6 +860,38 @@ msgstr "ስለኛ"
 #: templates/pages/about.html:12 templates/pages/about.html:15
 msgid "About Us"
 msgstr "ስለኛ"
+
+#: templates/pages/catagories.html:18
+#, fuzzy
+#| msgid "catagory"
+msgid "Category"
+msgstr "አይነት"
+
+#: templates/pages/catagories.html:32 templates/pages/home.html:67
+msgid "Featured <span>Collactions</span>"
+msgstr "የኔ የምትሉት <span>ስብስብ</span>"
+
+#: templates/pages/catagories.html:126
+#, fuzzy
+#| msgid " Latest <span>Product</span>"
+msgid "Latest <span>Products</span>"
+msgstr "የቅርብ ጊዜ  <span>ምርቶች</span>"
+
+#: templates/pages/catagories.html:135 templates/pages/home.html:214
+msgid "For Sale"
+msgstr "የሚሸጥ"
+
+#: templates/pages/catagories.html:256 templates/pages/home.html:338
+msgid "Latest <span>Service</span>"
+msgstr "የቅርብ ጊዜ  <span>የሰዉ ሐይል ስራወች</span>"
+
+#: templates/pages/catagories.html:385 templates/pages/home.html:426
+msgid "Do You Have Questions ?"
+msgstr "ጥያቄ አለወት ?"
+
+#: templates/pages/catagories.html:389 templates/pages/home.html:430
+msgid "Get in Touch"
+msgstr "ያግኙን"
 
 #: templates/pages/contact.html:3 templates/pages/contact.html:10
 #: templates/pages/contact.html:13 templates/pages/contact.html:25
@@ -866,6 +942,11 @@ msgstr "ዌብሳይት"
 msgid "Wow Factor Standard"
 msgstr "ምርት እና አገልግልዎትን ያስተዋዉቁ  ይግዙ"
 
+#: templates/pages/home.html:20 templates/pages/home.html:29
+#: templates/pages/home.html:38
+msgid "Read more"
+msgstr "ተጨማሪ ያንብቡ"
+
 #: templates/pages/home.html:26
 msgid "Explore Your Dream Car"
 msgstr "ምርት እና አገልግልዎትን ይቭጡ"
@@ -874,34 +955,24 @@ msgstr "ምርት እና አገልግልዎትን ይቭጡ"
 msgid "We Are Wheel"
 msgstr "በሁሉም የኢትዮጵያ ከተሞች"
 
-#: templates/pages/home.html:38
-msgid "Read more"
-msgstr "ተጨማሪ ያንብቡ"
+#: templates/pages/home.html:159
+msgid "Some <span>Catagories</span>"
+msgstr "የሚሸጡ  <span>ስብስቦች</span> "
 
-#: templates/pages/home.html:81
-msgid "Featured <span>Collactions</span>"
-msgstr "የኔ የምትሉት <span>ስብስብ</span>"
-
-#: templates/pages/home.html:175
-msgid " Latest <span>Product</span>"
+#: templates/pages/home.html:205
+#, fuzzy
+#| msgid " Latest <span>Product</span>"
+msgid "Latest <span>Product</span>"
 msgstr "የቅርብ ጊዜ  <span>ምርቶች</span>"
 
-#: templates/pages/home.html:269
-msgid "Latest <span>Service</span>"
-msgstr "የቅርብ ጊዜ  <span>የሰዉ ሐይል ስራወች</span>"
+#: templates/pages/home.html:293
+msgid "Other <span>Catagories</span>"
+msgstr "ሌሎች  <span>ስብስቦች</span> "
 
-#: templates/pages/home.html:360
-msgid "Latest <span>Collactions</span>"
-msgstr "የቅርብ ጊዜ <span>ስብስቦች</span> "
+#~ msgid " Latest <span>Product</span>"
+#~ msgstr "የቅርብ ጊዜ  <span>ምርቶች</span>"
 
-#: templates/pages/home.html:369
-msgid "For Sale"
-msgstr "የሚሸጥ"
-
-#: templates/pages/home.html:443
-msgid "Do You Have Questions ?"
-msgstr "ጥያቄ አለወት ?"
-
-#: templates/pages/home.html:447
-msgid "Get in Touch"
-msgstr "ያግኙን"
+#, fuzzy
+#~| msgid "Latest <span>Collactions</span>"
+#~ msgid "Latest <span>Collactions</span>"
+#~ msgstr "የቅርብ ጊዜ <span>ስብስቦች</span> "
